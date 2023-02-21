@@ -22,6 +22,14 @@ def register_extensions(app):
     api.add_namespace(genre_ns)
     api.add_namespace(movie_ns)
 
+    # todo register namespaces
+    api.add_namespace(user_ns)
+    api.add_namespace(auth_ns)
+
+    # todo create_all()
+    with app.app_context():
+        db.create_all()
+
 
 app = create_app(Config())
 app.debug = True
